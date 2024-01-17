@@ -1,0 +1,61 @@
+body {
+  padding: 20px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  background-color: lightgrey;
+  border: 2px solid black;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  font-family: Arial;
+  text-align: center;
+}
+
+.title {
+  background-color: orange;
+  flex-basis: 100%;
+  padding: 5%;
+}
+
+.title h1 {
+  font-size: 50px;
+  text-decoration: underline;
+}
+
+.title h2 {
+  font-size: 20px;
+  font-weight: lighter;
+}
+
+.info {
+  background-color: blue;
+  box-sizing: border-box;
+  flex-basis: 50%;
+  padding: 2%;
+}
+
+.info p {
+  margin: 0px;
+}
+
+.contact {
+  box-sizing: border-box;
+  background-color: red;
+  flex-basis: 50%;
+  padding: 2%;
+}
+
+.contact a {
+  display: block;
+  text-decoration: none;
+}
+
+.copyright {
+  background-color: green;
+  flex-basis: 100%;
+  padding: 2%;
+}
