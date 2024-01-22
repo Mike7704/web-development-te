@@ -18,6 +18,7 @@ async function search(query) {
 
 // Display all images from search result
 function createImages(arrayImages) {
+  imageContainer.innerHTML = ""; // Clear previous images
   console.log(arrayImages);
   arrayImages.forEach((img) => {
     let imgTag = document.createElement("img");
