@@ -28,6 +28,7 @@ function createImages(arrayImages) {
   });
 }
 
+// Github API request
 async function gitHubRequest() {
   let response = await fetch(`https://api.github.com/repos/Mike7704/cookie-clicker`);
   console.log(response);
@@ -35,5 +36,20 @@ async function gitHubRequest() {
   console.log(`stargazers_count: ${data.stargazers_count}`);
   console.log(`description: ${data.description}`);
 }
-
 gitHubRequest();
+
+// Rick and Morty API request
+async function rickMortyRequest() {
+  let response = await fetch(`https://rickandmortyapi.com/api/character`);
+  console.log(response);
+  let data = await response.json();
+  console.log(`Name: ${data.results[0].name}`);
+  console.log(`Species: ${data.results[0].species}`);
+
+  imageContainer.innerHTML = ""; // Clear previous images
+  let imgTag = document.createElement("img");
+  imgTag.src = data.results[0].image;
+
+  imageContainer.appendChild(imgTag);
+}
+rickMortyRequest();
