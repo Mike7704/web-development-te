@@ -9,7 +9,7 @@ form.addEventListener("submit", function (event) {
 });
 
 async function search(query) {
-  let response = await fetch(`https://api.unsplash.com/search/photos?page=1&query=${query}&client_id=ZhelQ5q2rAqa5RAY_LImIMv-C70OG01OSHEGnmMekaE`);
+  let response = await fetch(`https://api.unsplash.com/search/photos?page=1&query=${query}&client_id=`); // ID here
   console.log(response);
   let data = await response.json();
   //console.log(data.results[0].urls.raw);
