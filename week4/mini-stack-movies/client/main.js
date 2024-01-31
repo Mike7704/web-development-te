@@ -1,5 +1,5 @@
 const form = document.getElementById("form");
-const container = document.getElementById("movie-container");
+const movieContainer = document.getElementById("movie-container");
 
 form.addEventListener("submit", async (event) => {
   event.preventDefault();

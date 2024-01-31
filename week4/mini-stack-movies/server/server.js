@@ -7,6 +7,7 @@ const db = new Database("database.db");
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 app.get("/", (req, res) => {
   res.send("Message Received");
