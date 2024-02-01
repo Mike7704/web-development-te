@@ -11,7 +11,6 @@ app.use(cors());
 
 app.get("/", (req, res) => {
   res.send("Message Received");
-
   res.status(200).json({ message: true });
 });
 
@@ -36,7 +35,14 @@ app.get("/movies", (req, res) => {
   }
 });
 
+/*
+
+req.params -> movies
+
+
+*/
 app.get("/querytest", (req, res) => {
+  // localhost:PORT/querytest?one=1&two=2
   if (req.query.one && req.query.two) {
     res.send("You sent 2 queries");
   } else if (req.query.one) {
@@ -49,18 +55,47 @@ app.get("/querytest", (req, res) => {
 });
 
 // Add a new movie to the database
-// {
-// "movie": "Toy Story"
-// "year": "1997"
-// }
 app.post("/movies", (req, res) => {
   try {
+    // req.body =
+    // {
+    // "movie": ""
+    // "year": ""
+    // "imgURL": ""
+    // }
     const movie = req.body.movie;
     const year = req.body.year;
+    const imgURL = req.body.imgURL;
 
-    // Run my SQL statement to insert new movie
-    const newMovie = db.prepare(`INSERT INTO movies (movie, year) VALUES (?,?)`).run(movie, year);
+    // Run my SQL statement to insert new movie - ??'s are replaced by values in .run (movie, year, imgURL)
+    const newMovie = db.prepare(`INSERT INTO movies (movie, year, imgURL) VALUES (?,?,?)`).run(movie, year, imgURL);
     res.status(200).json(newMovie);
+  } catch (error) {
+    res.status(500).json({ error: error });
+  }
+});
+
+// DELETE movies/1
+app.delete("/movies/:id", (req, res) => {
+  try {
+    const id = req.params.id;
+    const deletedMovie = db.prepare(`DELETE FROM movies WHERE id = ?`).run(id);
+    res.status(200).json({ recordDeleted: deletedMovie });
+  } catch (error) {
+    res.status(500).json({ error: error });
+  }
+});
+
+// Update movie
+app.put("/movies/:id", (req, res) => {
+  try {
+    const id = req.params.id;
+    const movie = req.body.movie;
+    const year = req.body.year;
+    const imgURL = req.body.imgURL;
+
+    const updatedMovie = db.prepare(`UPDATE movies SET movie = ?, year = ?, imgURL = ? WHERE id = ?`).run(movie, year, imgURL, id);
+    res.status(200).json({ recordUpdated: updatedMovie });
   } catch (error) {
     res.status(500).json({ error: error });
   }
