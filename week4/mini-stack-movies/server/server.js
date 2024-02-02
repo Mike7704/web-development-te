@@ -35,12 +35,12 @@ app.get("/movies", (req, res) => {
   }
 });
 
-/*
+// req.body -> stuff sent from the client explicitly.
+// req.query -> ?key=value in the url
 
-req.params -> movies
-
-
-*/
+// also this one - also in url, but not in the query
+// /movies/:id
+// req.params -> /movies/2
 app.get("/querytest", (req, res) => {
   // localhost:PORT/querytest?one=1&two=2
   if (req.query.one && req.query.two) {
