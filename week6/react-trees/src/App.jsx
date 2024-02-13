@@ -1,5 +1,7 @@
 import Header from "./components/Header";
+import Counter from "./components/Counter";
 import TreeCard from "./components/TreeCard";
+import Monkey from "./components/Monkey";
 import Footer from "./components/Footer";
 import "./App.css";
 
@@ -7,6 +9,8 @@ export default function App() {
   return (
     <div>
       <Header />
+      <Counter />
+      <Monkey />
       <TreeCard
         treeName="Oak"
         location="Uk"
