@@ -44,3 +44,6 @@
 .tree-card-container {
   border: 2px solid white;
 }
+.tree-card-container img {
+  max-width: 96%;
+}
