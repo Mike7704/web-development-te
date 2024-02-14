@@ -4,6 +4,7 @@ import Counter from "./components/Counter";
 import TreeCard from "./components/TreeCard";
 import { interestingTrees } from "./components/TreesArray";
 import Monkey from "./components/Monkey";
+import Gallery from "./components/Gallery";
 import Footer from "./components/Footer";
 import "./App.css";
 
@@ -32,6 +33,7 @@ export default function App() {
           <TreeCard key={tree.id} treeName={tree.name} location={tree.location} imgLink={tree.img} />
         ))}
       </div>
+      <Gallery />
       <Footer />
     </div>
   );

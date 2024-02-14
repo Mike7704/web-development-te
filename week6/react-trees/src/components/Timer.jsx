@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 export default function Timer() {
-  // UseState will the the initial state of something as its argument
+  // UseState will set the initial state of something as its argument
   // Returns an array [value, functionToUpdate]
   const [count, setCount] = useState(0);
 
