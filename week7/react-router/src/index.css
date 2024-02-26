@@ -35,7 +35,8 @@ h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
-.nav-bar {
+.nav-bar,
+.sortButtons {
   display: flex;
   gap: 10px;
 }
