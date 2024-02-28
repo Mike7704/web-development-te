@@ -11,6 +11,7 @@ export default function Home() {
       <Link href="/about">About Page</Link>
       <Link href="/blog">Blog Page</Link>
       <Link href="/posts">Posts Page</Link>
+      <Link href="/animatedPage">Animated Page</Link>
     </main>
   );
 }
