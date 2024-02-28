@@ -10,6 +10,7 @@ export default function Home() {
       <Image src="/vercel.svg" alt="Vercel Logo" className="dark:invert" width={100} height={24} priority />
       <Link href="/about">About Page</Link>
       <Link href="/blog">Blog Page</Link>
+      <Link href="/posts">Posts Page</Link>
     </main>
   );
 }

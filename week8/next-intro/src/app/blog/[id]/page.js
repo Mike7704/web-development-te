@@ -1,5 +1,5 @@
 import Link from "next/link";
-
+/*
 export async function generateMetadata({ params, searchParams }, parent) {
   // load the post
   const { rows: posts } = await sql`SELECT * FROM posts WHERE posts.Id = ${params.id}`;
@@ -8,7 +8,7 @@ export async function generateMetadata({ params, searchParams }, parent) {
   return {
     title: post.title,
   };
-}
+}*/
 
 export default async function Page({ params }) {
   const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${params.id}`);
@@ -16,7 +16,7 @@ export default async function Page({ params }) {
 
   return (
     <div>
-      <h3>More about that most...</h3>
+      <h3>More about that post...</h3>
       <p>Title: {postInfo.title}</p>
       <p>Body: {postInfo.body}</p>
       <Link href={`/blog`}>Back</Link>

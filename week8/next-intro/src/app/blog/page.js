@@ -17,12 +17,13 @@ export default async function Page({ searchParams }) {
     <div>
       <h1>Blog page</h1>
       {posts.map((post) => (
-        <div key={post.id}>
-          <h3>{post.title}</h3>
+        <div className="pt-3" key={post.id}>
+          <h3 className="font-bold underline">{post.title}</h3>
           <p>{post.body}</p>
           <Link href={`/blog/${post.id}`}>Read More</Link>
         </div>
       ))}
+      <Link href={`/`}>Back</Link>
     </div>
   );
 }
