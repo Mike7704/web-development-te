@@ -38,6 +38,7 @@ export default async function PostsPage() {
         <button className="p-3" type="submit">
           Submit
         </button>
+        {/*<SavePostButton className="p-3" />*/}
       </form>
       <div className="pt-3">
         <Link href={`/posts`}>Back</Link>
