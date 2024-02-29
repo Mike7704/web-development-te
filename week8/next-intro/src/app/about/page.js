@@ -5,7 +5,7 @@ export const metadata = {
   description: "A simple blog built with Next.js",
 };
 
-export default function Page() {
+export default function About() {
   return (
     <div>
       <h1>About page</h1>

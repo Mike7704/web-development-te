@@ -17,7 +17,12 @@ export default async function PostsPage() {
           </div>
         ))}
       </ul>
-      <Link href={`/`}>Back</Link>
+      <div className="pt-3">
+        <Link href={`/posts/new`}>Add Post</Link>
+      </div>
+      <div>
+        <Link href={`/`}>Back</Link>
+      </div>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default async function Page({ searchParams }) {
+export default async function Blogs({ searchParams }) {
   const response = await fetch(`https://jsonplaceholder.typicode.com/posts`);
   let posts = await response.json();
 
